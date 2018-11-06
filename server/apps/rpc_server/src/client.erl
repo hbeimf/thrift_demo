@@ -5,6 +5,7 @@
 -include("msg_constants.hrl").
 
 -include("msg_service_thrift.hrl").
+-include("log.hrl").
 
 -export([request/4, test/0]).
 
@@ -21,6 +22,7 @@ request(Host, Port, Id, Msg) ->
     {ClientAgain, Response} = thrift_client:call(Client, hello, [Req]),
     thrift_client:close(ClientAgain),
 
-    io:format("reply: ~p ~n", [Response]),
+    % io:format("reply: ~p ~n", [Response]),
+    ?LOG({reply, Response}),
     Response.
     % ok.
