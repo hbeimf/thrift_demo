@@ -5,6 +5,7 @@
   {mod, { server_app, []}},
   {applications,
    [kernel,
+   rpc_server,
     stdlib
    ]},
   {env,[]},
