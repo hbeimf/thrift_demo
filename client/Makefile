@@ -1,5 +1,8 @@
-run:
+run:client
 	php client.php
 
-file:
+client:
+	rm -rf ./msg
 	thrift -r --gen php msg.thrift
+	mv ./gen-php/msg ./
+	rm -rf ./gen-php
