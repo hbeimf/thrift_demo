@@ -1,5 +1,5 @@
--ifndef(_example_types_included).
--define(_example_types_included, yeah).
+-ifndef(_msg_types_included).
+-define(_msg_types_included, yeah).
 
 %% struct 'Message'
 

@@ -5,5 +5,5 @@
 %%
 
 
--include("example_types.hrl").
+-include("msg_types.hrl").
 
