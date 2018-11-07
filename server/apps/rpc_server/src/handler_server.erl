@@ -1,5 +1,7 @@
 -module(handler_server).
 -include("msg_service_thrift.hrl").
+-include("log.hrl").
+
 -export([start/0, handle_function/2, say/1, stop/1, handle_error/2]).
 
 
@@ -35,14 +37,18 @@ handle_function(hello, TheMessageRecord) ->
     %% unpack these or not, whatever.  Point is it's a record:
     % _Id = TheMessageRecord#message.id,
     % _Msg = TheMessageRecord#message.text,
-
-    io:format("answer: ~p ~n ", [TheMessageRecord]),
-
-    %% at this point you probably want to talk to a pool of gen_servers
-    %% or something like that.
-
-    %% send a reply per the service definition in thrift/example.thrift:
+    % io:format("answer: ~p ~n ", [TheMessageRecord]),
+    ?LOG({hello, TheMessageRecord}),
     {reply, #'Message'{id = 1, text = <<"Thanks!">>}};
+
+handle_function('AddUser', TheMessageRecord) ->
+    % io:format("answer: ~p ~n ", [TheMessageRecord]),
+    ?LOG({'AddUser', TheMessageRecord}),
+    {reply, #'ServerReply'{code = 1, text = <<"add user !">>}};
+
+handle_function('UpdateUser', TheMessageRecord) ->
+    ?LOG({'UpdateUser', TheMessageRecord}),
+    {reply, #'ServerReply'{code = 1, text = <<"update user!">>}};
 
 handle_function(_Function, _Args) ->
     {reply, #'Message'{id = 404, text = <<"not found!">>}}.
