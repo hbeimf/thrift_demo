@@ -44,11 +44,11 @@ handle_function(hello, TheMessageRecord) ->
 handle_function('AddUser', TheMessageRecord) ->
     % io:format("answer: ~p ~n ", [TheMessageRecord]),
     ?LOG({'AddUser', TheMessageRecord}),
-    {reply, #'ServerReply'{code = 1, text = <<"add user !">>}};
+    {reply, #'ServerReply'{code = 200, text = <<"add user !">>}};
 
 handle_function('UpdateUser', TheMessageRecord) ->
     ?LOG({'UpdateUser', TheMessageRecord}),
-    {reply, #'ServerReply'{code = 1, text = <<"update user!">>}};
+    {reply, #'ServerReply'{code = 200, text = <<"update user!">>}};
 
 handle_function(_Function, _Args) ->
     {reply, #'Message'{id = 404, text = <<"not found!">>}}.
