@@ -4,10 +4,10 @@ extern crate rs;
 use thrift::protocol::{TCompactInputProtocol, TCompactOutputProtocol};
 use thrift::transport::{TFramedReadTransport, TFramedWriteTransport, TIoChannel, TTcpChannel};
 
-use std::time::{Duration, Instant};
+use std::time::{ Instant};
 
 // use rs::{SimpleServiceSyncClient, TSimpleServiceSyncClient};
-use rs::{MsgServiceSyncClient,  Message};
+use rs::{MsgServiceSyncClient};
 
 fn main() {
     let now = Instant::now();
@@ -35,9 +35,11 @@ fn run() -> thrift::Result<()> {
     let mut client = MsgServiceSyncClient::new(i_prot, o_prot);
 
     // make service calls
-    let msg = Message::new(Some(100), Some("hello"));
-    let res = client.hello(msg)?;
-    println!("{:?}", res);
+    let msg = rs::Message::new(Some(100), Some("hello".to_owned()));
+    // left msg = Message::default();
+    // let res = client.hello(msg)?;
+    // let res = client.hello("Allen".to_owned())?;
+    println!("{:?}", msg);
 
     // done!
     Ok(())
