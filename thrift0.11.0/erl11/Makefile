@@ -1,6 +1,6 @@
 
-# run:
-# 	cargo run --bin server
+run:
+	rebar3 shell
 
 # client:
 # 	cargo run --bin client

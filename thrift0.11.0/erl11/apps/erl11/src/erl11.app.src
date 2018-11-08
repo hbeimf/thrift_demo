@@ -5,6 +5,7 @@
   {mod, { erl11_app, []}},
   {applications,
    [kernel,
+   rpc_server,
     stdlib
    ]},
   {env,[]},
