@@ -7,8 +7,8 @@ use thrift::transport::{TFramedReadTransport, TFramedWriteTransport, TIoChannel,
 use std::time::{ Instant};
 
 // use rs::{SimpleServiceSyncClient, TSimpleServiceSyncClient};
-use rs::{MsgServiceSyncClient};
-use rs::TMsgServiceSyncClient;
+use rs::{MsgServiceSyncClient, TMsgServiceSyncClient};
+
 fn main() {
     let now = Instant::now();
     match run() {
