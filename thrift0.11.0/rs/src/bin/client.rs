@@ -8,7 +8,7 @@ use std::time::{ Instant};
 
 // use rs::{SimpleServiceSyncClient, TSimpleServiceSyncClient};
 use rs::{MsgServiceSyncClient};
-
+use rs::TMsgServiceSyncClient;
 fn main() {
     let now = Instant::now();
     match run() {
@@ -37,9 +37,9 @@ fn run() -> thrift::Result<()> {
     // make service calls
     let msg = rs::Message::new(Some(100), Some("hello".to_owned()));
     // left msg = Message::default();
-    // let res = client.hello(msg)?;
+    let res = client.hello(msg)?;
     // let res = client.hello("Allen".to_owned())?;
-    println!("{:?}", msg);
+    println!("{:?}", res);
 
     // done!
     Ok(())
