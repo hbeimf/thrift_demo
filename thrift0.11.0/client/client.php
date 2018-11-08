@@ -37,17 +37,17 @@ class ThriftClient {
 	public $transport = null;
 	public $client = null;
 	private $_host = "localhost";
-	private $_port = 9090;
+	private $_port = 9999;
 }
 
 $client = new ThriftClient();
 $r = $client->hello(123, "hello world");
 print_r($r);
 
-$r = $client->AddUser(10000, "admin");
-print_r($r);
+// $r = $client->AddUser(10000, "admin");
+// print_r($r);
 
-$r = $client->UpdateUser(10000, "test");
-print_r($r);
+// $r = $client->UpdateUser(10000, "test");
+// print_r($r);
 
 ?>

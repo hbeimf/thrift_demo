@@ -3,7 +3,7 @@ run:client
 
 client:
 	rm -rf ./msg
-	thrift -r --gen php msg.thrift
+	thrift11 -r --gen php msg.thrift
 	mv ./gen-php/msg ./
 	rm -rf ./gen-php
 

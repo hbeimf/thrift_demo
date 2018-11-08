@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "30292677f9b78c10c9e91e208973e391",
-    "content-hash": "e1ecf5c09a1e7239ab2807b08413de9f",
+    "hash": "6a4e64b58b75ef6c1473bdbe29ea23ee",
+    "content-hash": "5f8d171f9c2c11e6259845146da0ad8e",
     "packages": [
         {
             "name": "leric/php-thrift",
-            "version": "0.9.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leric/php-thrift-package.git",
-                "reference": "7c56576df255024b568f0d4e7188b0860ad897f5"
+                "reference": "73b88f7c272013bc9e66de99a2e9ba41899a1c49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leric/php-thrift-package/zipball/7c56576df255024b568f0d4e7188b0860ad897f5",
-                "reference": "7c56576df255024b568f0d4e7188b0860ad897f5",
+                "url": "https://api.github.com/repos/leric/php-thrift-package/zipball/73b88f7c272013bc9e66de99a2e9ba41899a1c49",
+                "reference": "73b88f7c272013bc9e66de99a2e9ba41899a1c49",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.5.0"
             },
             "type": "library",
             "autoload": {
@@ -38,7 +38,7 @@
                 {
                     "name": "Leric Zhang",
                     "email": "leric.zhang@gmail.com",
-                    "homepage": "http://www.leric.info",
+                    "homepage": "http://www.leric.net",
                     "role": "Developer"
                 }
             ],
@@ -47,13 +47,15 @@
             "keywords": [
                 "thrift"
             ],
-            "time": "2014-10-27 05:35:06"
+            "time": "2017-12-04 05:12:09"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "leric/php-thrift": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-            "leric/php-thrift": "0.9.*" 
+            "leric/php-thrift": "dev-master" 
     },
     "autoload": {
         "psr-4": {
