@@ -23,7 +23,7 @@ fn main() {
 fn run() -> thrift::Result<()> {
     // build our client and connect to the host:port
     let mut c = TTcpChannel::new();
-    c.open("127.0.0.1:9000")?;
+    c.open("127.0.0.1:9999")?;
     let (i_chan, o_chan) = c.split()?;
 
     // build the input/output protocol

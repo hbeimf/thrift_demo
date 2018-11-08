@@ -19,7 +19,7 @@ fn main() {
 
 fn run() -> thrift::Result<()> {
     // set listen address
-    let listen_address = "127.0.0.1:9000";
+    let listen_address = "127.0.0.1:9999";
 
     // create input protocol/transport factory
     let i_tran_fact = TFramedReadTransportFactory::new();
