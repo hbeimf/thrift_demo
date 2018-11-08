@@ -1,2 +1,2 @@
 out:
-	thrift11 --gen rs msg.thrift
+	thrift11 -out src --gen rs msg.thrift
