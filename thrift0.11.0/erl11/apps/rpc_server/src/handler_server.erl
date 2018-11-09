@@ -16,7 +16,7 @@ say(Name)->
     BinSentence.
 
 start()->
-    start(9090).
+    start(9999).
 
 start(Port)->
     Handler = ?MODULE,
@@ -41,7 +41,7 @@ handle_function(hello, TheMessageRecord) ->
     ?LOG({hello, TheMessageRecord}),
     {reply, #'msg.Message'{id = 1, text = <<"Thanks!">>}};
 
-handle_function('msg.AddUser', TheMessageRecord) ->
+handle_function('AddUser', TheMessageRecord) ->
     % io:format("answer: ~p ~n ", [TheMessageRecord]),
     ?LOG({'AddUser', TheMessageRecord}),
     {reply, #'msg.ServerReply'{code = 200, text = <<"add user !">>}};

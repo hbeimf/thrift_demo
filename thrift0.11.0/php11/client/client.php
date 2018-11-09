@@ -44,10 +44,10 @@ $client = new ThriftClient();
 $r = $client->hello(123, "hello world");
 print_r($r);
 
-// $r = $client->AddUser(10000, "admin");
-// print_r($r);
+$r = $client->AddUser(10000, "admin");
+print_r($r);
 
-// $r = $client->UpdateUser(10000, "test");
-// print_r($r);
+$r = $client->UpdateUser(10000, "test");
+print_r($r);
 
 ?>

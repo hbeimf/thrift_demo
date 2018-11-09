@@ -10,7 +10,7 @@
 -export([request/4, test/0]).
 
 test() -> 
-	request("localhost", 9090, 123, "str msg!!"),
+	request("localhost", 9999, 123, "str msg!!"),
 	% request("127.0.0.1", 9999, 456, "str msg!!"),
 	ok.
 
