@@ -35,8 +35,10 @@ fn run() -> thrift::Result<()> {
     let mut client = MsgServiceSyncClient::new(i_prot, o_prot);
 
     // make service calls
-    let msg = rs::Message::new(Some(100), Some("hello".to_owned()));
-    // left msg = Message::default();
+    // let msg = rs::Message::new(Some(100), Some("hello".to_owned()));
+    let msg = rs::Message::new(100, "hello".to_owned());
+
+    // left msg = rs::Message::default();
     let res = client.hello(msg)?;
     // let res = client.hello("Allen".to_owned())?;
     println!("{:?}", res);

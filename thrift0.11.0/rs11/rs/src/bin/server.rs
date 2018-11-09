@@ -50,7 +50,8 @@ struct MsgServiceHandlerImpl;
 impl MsgServiceSyncHandler for MsgServiceHandlerImpl {
     fn handle_hello(&self, msg: Message) -> thrift::Result<Message> {
         println!("{:?}", msg);
-         let reply_msg = rs::Message::new(Some(101), Some("hello world".to_owned()));
-        Ok(reply_msg)
+        //  let reply_msg = rs::Message::new(Some(101), Some("hello world".to_owned()));
+        // Ok(reply_msg)
+        Ok(msg)
     }
 }

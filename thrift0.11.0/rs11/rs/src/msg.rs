@@ -36,21 +36,21 @@ use thrift::server::TProcessor;
 
 #[derive(Clone, Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
 pub struct Message {
-  pub id: Option<i64>,
-  pub text: Option<String>,
+  pub id: i64,
+  pub text: String,
 }
 
 impl Message {
-  pub fn new<F1, F2>(id: F1, text: F2) -> Message where F1: Into<Option<i64>>, F2: Into<Option<String>> {
+  pub fn new(id: i64, text: String) -> Message {
     Message {
-      id: id.into(),
-      text: text.into(),
+      id: id,
+      text: text,
     }
   }
   pub fn read_from_in_protocol(i_prot: &mut TInputProtocol) -> thrift::Result<Message> {
     i_prot.read_struct_begin()?;
-    let mut f_1: Option<i64> = Some(0);
-    let mut f_2: Option<String> = Some("".to_owned());
+    let mut f_1: Option<i64> = None;
+    let mut f_2: Option<String> = None;
     loop {
       let field_ident = i_prot.read_field_begin()?;
       if field_ident.field_type == TType::Stop {
@@ -73,42 +73,25 @@ impl Message {
       i_prot.read_field_end()?;
     }
     i_prot.read_struct_end()?;
+    verify_required_field_exists("Message.id", &f_1)?;
+    verify_required_field_exists("Message.text", &f_2)?;
     let ret = Message {
-      id: f_1,
-      text: f_2,
+      id: f_1.expect("auto-generated code should have checked for presence of required fields"),
+      text: f_2.expect("auto-generated code should have checked for presence of required fields"),
     };
     Ok(ret)
   }
   pub fn write_to_out_protocol(&self, o_prot: &mut TOutputProtocol) -> thrift::Result<()> {
     let struct_ident = TStructIdentifier::new("Message");
     o_prot.write_struct_begin(&struct_ident)?;
-    if let Some(fld_var) = self.id {
-      o_prot.write_field_begin(&TFieldIdentifier::new("id", TType::I64, 1))?;
-      o_prot.write_i64(fld_var)?;
-      o_prot.write_field_end()?;
-      ()
-    } else {
-      ()
-    }
-    if let Some(ref fld_var) = self.text {
-      o_prot.write_field_begin(&TFieldIdentifier::new("text", TType::String, 2))?;
-      o_prot.write_string(fld_var)?;
-      o_prot.write_field_end()?;
-      ()
-    } else {
-      ()
-    }
+    o_prot.write_field_begin(&TFieldIdentifier::new("id", TType::I64, 1))?;
+    o_prot.write_i64(self.id)?;
+    o_prot.write_field_end()?;
+    o_prot.write_field_begin(&TFieldIdentifier::new("text", TType::String, 2))?;
+    o_prot.write_string(&self.text)?;
+    o_prot.write_field_end()?;
     o_prot.write_field_stop()?;
     o_prot.write_struct_end()
-  }
-}
-
-impl Default for Message {
-  fn default() -> Self {
-    Message{
-      id: Some(0),
-      text: Some("".to_owned()),
-    }
   }
 }
 
