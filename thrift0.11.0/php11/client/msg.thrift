@@ -1,8 +1,8 @@
 namespace * msg
 
 struct Message {
-  1:  i64 id,
-  2:  string text
+  1: required  i64 id,
+  2: required  string text
 }
 
 struct UserInfo {

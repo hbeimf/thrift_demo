@@ -23,12 +23,12 @@ class Message {
   static $_TSPEC = array(
     1 => array(
       'var' => 'id',
-      'isRequired' => false,
+      'isRequired' => true,
       'type' => TType::I64,
       ),
     2 => array(
       'var' => 'text',
-      'isRequired' => false,
+      'isRequired' => true,
       'type' => TType::STRING,
       ),
     );
