@@ -6,4 +6,10 @@ client:
 	cargo run --bin client
 
 gen:
-	thrift11 -out src --gen rs msg.thrift
+	thrift12 -out src --gen rs msg.thrift
+
+
+push:
+	git add .
+	git commit -m 'pu'
+	git push
