@@ -14,7 +14,7 @@ fn main() {
     match run() {
         Ok(()) => println!("client ran successfully"),
         Err(e) => {
-            println!("client failed with error {:?}", e);
+            println!("client failed with error:=====: {:?}", e);
             std::process::exit(1);
         }
     }
