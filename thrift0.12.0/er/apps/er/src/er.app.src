@@ -6,6 +6,7 @@
   {applications,
    [kernel,
     stdlib
+    ,erpc
    ]},
   {env,[]},
   {modules, []},

@@ -7,7 +7,7 @@
 -include("msg_constants.hrl").
 
 -include("msg_service_thrift.hrl").
--include_lib("glib/include/log.hrl").
+-include("log.hrl").
 
 % -export([request/4, test/0, go/0]).
 -compile(export_all).

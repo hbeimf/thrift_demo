@@ -2,7 +2,7 @@
 
 -module(rpc_server).
 -include("msg_service_thrift.hrl").
--include_lib("glib/include/log.hrl").
+-include("log.hrl").
 
 -export([start/0, handle_function/2, say/1, stop/1, handle_error/2]).
 
