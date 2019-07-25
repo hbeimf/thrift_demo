@@ -1,0 +1,17 @@
+{application, erl12,
+ [{description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { erl12_app, []}},
+  {applications,
+   [kernel,
+    stdlib
+    , rpc_server
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.
