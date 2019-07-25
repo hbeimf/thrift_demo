@@ -41,14 +41,14 @@ handle_function(hello, TheMessageRecord) ->
     ?LOG({hello, TheMessageRecord}),
     {reply, #'msg.Message'{id = 1, text = <<"Thanks!">>}};
 
-handle_function('AddUser', TheMessageRecord) ->
-    % io:format("answer: ~p ~n ", [TheMessageRecord]),
-    ?LOG({'AddUser', TheMessageRecord}),
-    {reply, #'msg.ServerReply'{code = 200, text = <<"add user !">>}};
+% handle_function('AddUser', TheMessageRecord) ->
+%     % io:format("answer: ~p ~n ", [TheMessageRecord]),
+%     ?LOG({'AddUser', TheMessageRecord}),
+%     {reply, #'msg.ServerReply'{code = 200, text = <<"add user !">>}};
 
-handle_function('UpdateUser', TheMessageRecord) ->
-    ?LOG({'UpdateUser', TheMessageRecord}),
-    {reply, #'msg.ServerReply'{code = 200, text = <<"update user!">>}};
+% handle_function('UpdateUser', TheMessageRecord) ->
+%     ?LOG({'UpdateUser', TheMessageRecord}),
+%     {reply, #'msg.ServerReply'{code = 200, text = <<"update user!">>}};
 
 handle_function(_Function, _Args) ->
     {reply, #'msg.Message'{id = 404, text = <<"not found!">>}}.

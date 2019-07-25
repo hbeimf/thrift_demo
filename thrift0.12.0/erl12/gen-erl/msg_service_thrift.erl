@@ -23,26 +23,8 @@ function_info('hello', reply_type) ->
 function_info('hello', exceptions) ->
   {struct, []}
 ;
-% AddUser(This, Info)
-function_info('AddUser', params_type) ->
-  {struct, [{1, {struct, {'msg_types', 'msg.UserInfo'}}}]}
-;
-function_info('AddUser', reply_type) ->
-  {struct, {'msg_types', 'msg.ServerReply'}};
-function_info('AddUser', exceptions) ->
-  {struct, []}
-;
-% UpdateUser(This, Info)
-function_info('UpdateUser', params_type) ->
-  {struct, [{1, {struct, {'msg_types', 'msg.UserInfo'}}}]}
-;
-function_info('UpdateUser', reply_type) ->
-  {struct, {'msg_types', 'msg.ServerReply'}};
-function_info('UpdateUser', exceptions) ->
-  {struct, []}
-;
 function_info(_Func, _Info) -> erlang:error(function_clause).
 
 function_names() -> 
-  ['hello', 'AddUser', 'UpdateUser'].
+  ['hello'].
 

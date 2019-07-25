@@ -15,37 +15,17 @@ struct_info('msg.Message') ->
           {2, string}]}
 ;
 
-struct_info('msg.UserInfo') ->
-  {struct, [{1, i64},
-          {2, string}]}
-;
-
-struct_info('msg.ServerReply') ->
-  {struct, [{1, i64},
-          {2, string}]}
-;
-
 struct_info(_) -> erlang:error(function_clause).
 
 struct_info_ext('msg.Message') ->
-  {struct, [{1, undefined, i64, 'id', undefined},
-          {2, undefined, string, 'text', undefined}]}
-;
-
-struct_info_ext('msg.UserInfo') ->
-  {struct, [{1, undefined, i64, 'uid', undefined},
-          {2, undefined, string, 'name', undefined}]}
-;
-
-struct_info_ext('msg.ServerReply') ->
-  {struct, [{1, undefined, i64, 'code', undefined},
-          {2, undefined, string, 'text', undefined}]}
+  {struct, [{1, required, i64, 'id', undefined},
+          {2, required, string, 'text', undefined}]}
 ;
 
 struct_info_ext(_) -> erlang:error(function_clause).
 
 struct_names() ->
-  ['msg.Message', 'msg.UserInfo', 'msg.ServerReply'].
+  ['msg.Message'].
 
 enum_info(_) -> erlang:error(function_clause).
 

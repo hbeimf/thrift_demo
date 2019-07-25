@@ -3,20 +3,8 @@
 
 %% struct 'msg.Message'
 
--record('msg.Message', {'id' :: integer() | 'undefined',
-                        'text' :: string() | binary() | 'undefined'}).
+-record('msg.Message', {'id' :: integer(),
+                        'text' :: string() | binary()}).
 -type 'msg.Message'() :: #'msg.Message'{}.
-
-%% struct 'msg.UserInfo'
-
--record('msg.UserInfo', {'uid' :: integer() | 'undefined',
-                         'name' :: string() | binary() | 'undefined'}).
--type 'msg.UserInfo'() :: #'msg.UserInfo'{}.
-
-%% struct 'msg.ServerReply'
-
--record('msg.ServerReply', {'code' :: integer() | 'undefined',
-                            'text' :: string() | binary() | 'undefined'}).
--type 'msg.ServerReply'() :: #'msg.ServerReply'{}.
 
 -endif.
