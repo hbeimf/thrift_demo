@@ -13,3 +13,9 @@ gen:
 	cp ./gen-erl/*.hrl ./apps/rpc_server/include/ 
 	cp ./gen-erl/*.erl ./apps/rpc_server/src/ 
 
+
+push:
+	git add .
+	git commit -m 'x'
+	git push
+	
