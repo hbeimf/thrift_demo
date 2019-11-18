@@ -9,7 +9,7 @@ run:
 # 	thrift11 -out src --gen erl msg.thrift
 
 gen:
-	thrift11 --gen erl msg.thrift
+	thrift --gen erl msg.thrift
 	cp ./gen-erl/*.hrl ./apps/rpc_server/include/ 
 	cp ./gen-erl/*.erl ./apps/rpc_server/src/ 
 
